@@ -44,15 +44,7 @@ function SignInPages() {
                 autoComplete="off"
                 layout="vertical"
               >
-                <Form.Item
-                  label="Email"
-                  name="email"
-                  rules={[
-                    { required: true, message: "Please input your username!" },
-                  ]}
-                >
-                  <Input />
-                </Form.Item>
+                
                 <Form.Item
                   label="Password"
                   name="password"
