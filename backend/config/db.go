@@ -1,9 +1,9 @@
 package config
 
 import (
-	"example/projectse/entity"
 	"fmt"
 
+	"blockchain.com/bc-67/entity"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
