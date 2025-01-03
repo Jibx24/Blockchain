@@ -39,7 +39,6 @@ export default App
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from './page/login'; // import LoginPage component
 import AppointmentForm from './page/AppointmentForm';
-import AppointmentTable from './page/AppointmentTable';
 
 const App: React.FC = () => {
   return (
@@ -47,7 +46,6 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/appointmentForm" element={<AppointmentForm />} />
-        <Route path="/appointmentTable" element={<AppointmentTable />} />
       </Routes>
     </Router>
   );
