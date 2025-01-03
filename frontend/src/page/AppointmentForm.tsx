@@ -4,38 +4,12 @@ import axios from "axios";
 
 const { Option } = Select;
 
-interface Props {
-  onAppointmentAdded: () => void;
-}
 
-const AppointmentForm: React.FC<Props> = ({ onAppointmentAdded }) => {
-  const [loading, setLoading] = React.useState(false);
-
-  const onFinish = async (values: any) => {
-    const { date, time, doctor_id, reason } = values;
-    const appointment = {
-      patient_id: "P123", // สมมติว่าดึงมาจากระบบ Authentication
-      doctor_id,
-      date: date.format("YYYY-MM-DD"),
-      time: time.format("HH:mm"),
-      reason,
-    };
-
-    setLoading(true);
-    try {
-      await axios.post("http://localhost:8080/appointment", appointment);
-      message.success("Appointment booked successfully!");
-      onAppointmentAdded();
-    } catch (error) {
-      message.error("Failed to book appointment");
-    } finally {
-      setLoading(false);
-    }
-  };
+const AppointmentForm: React.FC = () => {
 
   return (
     <div style={{ width: "100%", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
-      <Form onFinish={onFinish} layout="vertical" style={{ width: "80%", maxWidth: "600px", margin: "0 auto" }}>
+      <Form  layout="vertical" style={{ width: "80%", maxWidth: "600px", margin: "0 auto" }}>
         <Form.Item label="Doctor" name="doctor_id" rules={[{ required: true, message: "Please select a doctor!" }]}>
           <Select placeholder="Select a doctor">
             <Option value="D001">Dr. Smith (Cardiology)</Option>
@@ -53,7 +27,7 @@ const AppointmentForm: React.FC<Props> = ({ onAppointmentAdded }) => {
           <Input.TextArea rows={4} />
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit" loading={loading} style={{ width: "100%" }}>
+          <Button type="primary" htmlType="submit" style={{ width: "100%" }}>
             Book Appointment
           </Button>
         </Form.Item>
