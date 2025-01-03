@@ -9,6 +9,8 @@ type Patient struct {
 
 	gorm.Model
 
+	NationalID string    `json:"national_id"`
+
 	FirstName string    `json:"first_name"`
 
 	LastName  string    `json:"last_name"`
