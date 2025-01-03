@@ -63,7 +63,6 @@ function SignInPages() {
                   >
                     Log in
                   </Button>
-                  Or <a onClick={() => navigate("/signup")}>signup now !</a>
                 </Form.Item>
               </Form>
             </Col>
