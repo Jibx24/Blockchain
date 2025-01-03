@@ -59,21 +59,21 @@ func SetupDatabase() {
 		{
 			Date: time.Now(),
 			Time: time.Now(),
-			Illness: "ปวดหัว",
+			Reason: "ปวดหัว",
 			DepartmentID: 1,
 			PatientID: 1,
 		},
 		{
 			Date: time.Now(),
 			Time: time.Now(),
-			Illness: "ปวดตัว",
+			Reason: "ปวดตัว",
 			DepartmentID: 2,
 			PatientID: 2,
 		},
 	}
 
 	for _, appointment := range appointments {
-		db.FirstOrCreate(&appointment, entity.Appointment{Illness: appointment.Illness})
+		db.FirstOrCreate(&appointment, entity.Appointment{Reason: appointment.Reason})
 	}
 
 	//แผนก

@@ -13,7 +13,7 @@ type Appointment struct {
 
 	Time time.Time `json:"time"`
 
-	Illness string `json:"illness"`
+	Reason string `json:"reason"`
 
 	DepartmentID uint
 	Department   Department  `json:"department" gorm:"foreignKey:DepartmentID"`
