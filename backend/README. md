@@ -1,0 +1,2 @@
+npm install moment
+npm install --save-dev @types/moment
