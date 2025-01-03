@@ -33,22 +33,22 @@ function App() {
 }
 
 export default App
-*/
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AppointmentForm from "./page/AppointmentForm";
-import AppointmentTable from "./page/AppointmentTable";
-import LoginPage from "./page/login";
-import "./App.css";
+
+
+*/import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginPage from './page/login'; // import LoginPage component
+import AppointmentForm from './page/AppointmentForm';
+import AppointmentTable from './page/AppointmentTable';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<LoginPage />} />
+        <Route path="/" element={<LoginPage />} />
         <Route path="/appointmentForm" element={<AppointmentForm />} />
         <Route path="/appointmentTable" element={<AppointmentTable />} />
-      
-    </Routes>
+      </Routes>
     </Router>
   );
 };

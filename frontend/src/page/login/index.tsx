@@ -12,12 +12,12 @@ function SignInPages() {
     if (res.status == 200) {
       messageApi.success("Sign-in successful");
       localStorage.setItem("isLogin", "true");
-      localStorage.setItem("page", "dashboard");
+      localStorage.setItem("page", "AppointmentForm");
       localStorage.setItem("token_type", res.data.token_type);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("id", res.data.id);
       setTimeout(() => {
-        location.href = "/";
+        location.href = "/appointmentForm";
       }, 2000);
     } else {
       messageApi.error(res.data.error);
@@ -46,10 +46,10 @@ function SignInPages() {
               >
                 
                 <Form.Item
-                  label="Password"
-                  name="password"
+                  label="NationalID"
+                  name="national_id"
                   rules={[
-                    { required: true, message: "Please input your password!" },
+                    { required: true, message: "Please input your NationalID!" },
                   ]}
                 >
                   <Input.Password />
