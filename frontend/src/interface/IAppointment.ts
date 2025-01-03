@@ -5,4 +5,5 @@ export interface AppointmentInterface {
     Reason?: string;
     DepartmentID?: number;
     PatientID?: number;
+    
 }
